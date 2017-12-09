@@ -1,13 +1,240 @@
 {% load staticfiles %}
+
 <!DOCTYPE html>
 <html lang="en">
+
+<!-- Mirrored from 104.237.3.115/altena/src/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 22 Jun 2017 15:00:05 GMT -->
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="{% static 'prueba.css' %}" >
-</head>
-<body>
-{{ variable }}
-<h1>asdasd</h1>
-</body>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <!-- Meta, title, CSS, favicons, etc. -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Situacion Salud</title>
+
+        <!-- Bootstrap -->
+        <link href=" {% static 'vendors/bootstrap/dist/css/bootstrap.min.css' %} " rel="stylesheet">
+
+        <!-- Font Awesome -->
+        <link href="{% static 'vendors/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
+        <!-- NProgress -->
+    <link href="{% static 'vendors/nprogress/nprogress.css' %}" rel="stylesheet">
+
+        <!-- Animate.css -->
+    <link href="{% static 'vendors/animate.css/animate.min.css' %}" rel="stylesheet">
+
+        <!-- iCheck -->
+    <link href="{% static 'vendors/iCheck/skins/square/blue.css' %}" rel="stylesheet">
+
+
+        <!-- bootstrap-progressbar -->
+    <link href="{% static 'vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css' %}" rel="stylesheet">
+
+        <!-- JQVMap -->
+    <link href="{% static 'vendors/jqvmap/dist/jqvmap.min.css' %}" rel="stylesheet">
+
+        <!-- bootstrap-daterangepicker -->
+    <link href="{% static 'vendors/bootstrap-daterangepicker/daterangepicker.css' %}" rel="stylesheet">
+
+
+
+        <!-- Custom Theme Style -->
+    <link href="{% static 'css/custom.min.css' %}" rel="stylesheet">
+
+
+
+    </head>
+
+    <body class="nav-md">
+
+        <div class="container body">
+            <div class="main_container">
+                <div class="col-md-3 left_col">
+                    <div class="left_col scroll-view">
+                        <div class="navbar nav_title" style="border: 0;">
+                            <a href="index.html" class="site_title"><i class="fa fa-adjust"></i> <span class="logo-f">MIN<span class="logo-s">SA</span></span></a>
+                        </div>
+
+
+
+
+
+                        <br />
+
+                        <!-- sidebar menu -->
+                        <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+                            <div class="menu_section">
+                                <h3>General</h3>
+                                <ul class="nav side-menu">
+                                    <li class="active">
+                                        <a><i class="fa fa-home"></i> Registrar Datos <span class="fa fa-chevron-down"></span></a>
+                                        <ul class="nav child_menu" style="display: block;">
+                                            <li class="current-page"><a href="index.html">Factores Condicionantes</a></li>
+                                            <li><a href="dashboard_2.html">Nivel de Salud</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a><i class="fa fa-edit"></i> Reportes <span class="fa fa-chevron-down"></span></a>
+                                        <ul class="nav child_menu">
+                                            <li><a href="form_general.html">General</a></li>
+                                            <li><a href="form_advanced.html">Advanced Components</a></li>
+                                            <li><a href="form_validation.html">Validation</a></li>
+                                            <li><a href="form_wizards.html">Wizard</a></li>
+                                            <li><a href="form_upload.html">Upload</a></li>
+                                            <li><a href="form_cropping.html">Cropping</a></li>
+                                        </ul>
+                                    </li>
+
+
+                                </ul>
+                            </div>
+
+
+                        </div>
+                        <!-- /sidebar menu -->
+
+                        <!-- /menu footer buttons -->
+                        <div class="sidebar-footer hidden-small">
+                            <a href="http://104.237.3.115/altena/documentation/index.html" data-toggle="tooltip" data-placement="top" title="Documentation">
+                                <span class="glyphicon glyphicon-book" aria-hidden="true"></span>
+                            </a>
+                            <a data-toggle="tooltip" data-placement="top" title="FullScreen" onclick="toggleFullScreen();">
+                                <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
+                            </a>
+                        </div>
+                        <!-- /menu footer buttons -->
+                    </div>
+                </div>
+                <!-- top navigation -->
+                <div class="top_nav">
+                    <div class="nav_menu">
+                        <nav>
+                            <div class="nav toggle">
+                                <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+                            </div>
+
+                            <ul class="nav navbar-nav navbar-right">
+                                <li class="">
+                                    <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                        <img src="images/user-card-1.jpg" alt=""><span class="top_menu_user_name">Eric Smith</span>
+                                        <span class=" fa fa-angle-down"></span>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-usermenu pull-right profile-dropdown">
+                                        <li><a href="profile.html"><i class="fa fa-user" aria-hidden="true"></i>Profile</a></li>
+                                        <li><a href="task_list.html"><i class="fa fa-list-ul" aria-hidden="true"></i><span class="badge bg-green pull-right">5</span>Tasks</a></li>
+                                        <li><a href="messages.html"><i class="fa fa fa-envelope-o" aria-hidden="true"></i>Messages</a></li>
+                                        <li class="top-menu-border-top"><a href="login.html"><i class="fa fa-sign-out"></i>Log Out</a></li>
+                                    </ul>
+                                </li>
+
+
+
+
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <!-- /top navigation -->
+                <!-- breadcrumb -->
+                <div class="breadcrumb_content">
+                    <div class="breadcrumb_text"><a href="#">Home</a> / Dashboard 1
+                    </div>
+                </div>
+                <!-- /breadcrumb -->
+                <!-- page content -->
+                <div class="right_col bg_fff" role="main">
+                    <!-- top tiles -->
+                    <div class="row top_tiles">
+
+
+                    </div>
+                    <!-- /top tiles -->
+
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="dashboard_graph border_box">
+
+
+
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <br />
+
+
+                <!-- /page content -->
+
+                <!-- footer content -->
+                <footer>
+                    <div class="pull-right">
+                        © 2017 Altena Template by <a href="https://lifeinsys.com/">LifeInSYS</a>
+                    </div>
+                    <div class="clearfix"></div>
+                </footer>
+                <!-- /footer content -->
+            </div>
+        </div>
+
+        <!-- jQuery -->
+            <script src="{% static 'vendors/jquery/dist/jquery.min.js' %}"></script>
+
+        <!-- Bootstrap -->
+             <script src="{% static 'vendors/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+
+        <!-- FastClick -->
+             <script src="{% static 'vendors/fastclick/lib/fastclick.js' %}"></script>
+
+        <!-- NProgress -->
+             <script src="{% static 'vendors/nprogress/nprogress.js' %}"></script>
+
+        <!-- Chart.js -->
+             <script src="{% static 'vendors/Chart.js/dist/Chart.min.js' %}"></script>
+
+        <!-- gauge.js -->
+            <script src="{% static 'vendors/gauge.js/dist/gauge.min.js' %}"></script>
+
+        <!-- bootstrap-progressbar -->
+            <script src="{% static 'vendors/bootstrap-progressbar/bootstrap-progressbar.min.js' %}"></script>
+
+        <!-- iCheck -->
+            <script src="{% static 'vendors/iCheck/icheck.min.js' %}"></script>
+
+        <!-- Skycons -->
+            <script src="{% static 'vendors/skycons/skycons.js' %}"></script>
+
+        <!-- Flot -->
+            <script src="{% static 'vendors/Flot/jquery.flot.js' %}"></script>
+            <script src="{% static 'vendors/Flot/jquery.flot.pie.js' %}"></script>
+            <script src="{% static 'vendors/Flot/jquery.flot.time.js' %}"></script>
+            <script src="{% static 'vendors/Flot/jquery.flot.stack.js' %}"></script>
+            <script src="{% static 'vendors/Flot/jquery.flot.resize.js' %}"></script>
+
+        <!-- Flot plugins -->
+            <script src="{% static 'vendors/flot.orderbars/js/jquery.flot.orderBars.js' %}"></script>
+            <script src="{% static 'vendors/flot-spline/js/jquery.flot.spline.min.js' %}"></script>
+            <script src="{% static 'vendors/flot.curvedlines/curvedLines.js' %}"></script>
+
+        <!-- DateJS -->
+            <script src="{% static 'vendors/DateJS/build/date.js' %}"></script>
+
+        <!-- JQVMap -->
+            <script src="{% static 'vendors/jqvmap/dist/jquery.vmap.js' %}"></script>
+            <script src="{% static 'vendors/jqvmap/dist/maps/jquery.vmap.world.js' %}"></script>
+            <script src="{% static 'vendors/jqvmap/examples/js/jquery.vmap.sampledata.js' %}"></script>
+
+
+
+        <!-- bootstrap-daterangepicker -->
+            <script src="{% static 'vendors/moment/min/moment.min.js' %}"></script>
+            <script src="{% static 'vendors/bootstrap-daterangepicker/daterangepicker.js' %}"></script>
+
+
+        <!-- Custom Theme Scripts -->
+             <script src="{% static 'js/custom.js' %}"></script>
+
+
+
+    </body>
+
 </html>
