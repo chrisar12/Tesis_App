@@ -4,8 +4,8 @@ from django.contrib.auth.views import login
 
 
 urlpatterns = [
-    url(r'^SituacionSalud/', include('SituacionSalud.urls', namespace='SituacionSalud')),
-    url(r'^$', login, {'template_name': 'situacionsalud/login.html'}, name='login'),
+    url(r'^', include('SituacionSalud.urls', namespace='situacionsalud')),
+
 
     # Admin
     url('admin/', admin.site.urls),
