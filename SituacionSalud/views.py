@@ -19,6 +19,7 @@ def authentication(request):
 
     return render(request, 'login.html', {})
 
+
 @login_required
 def index(request):
     return render(request, 'situacionsalud/index.html', {})
