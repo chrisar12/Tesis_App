@@ -1,0 +1,77 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from 104.237.3.115/altena/src/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 22 Jun 2017 15:02:21 GMT -->
+<head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <!-- Meta, title, CSS, favicons, etc. -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Situacion Salud | login</title>
+        <!-- Favicon -->
+
+
+        <!-- Bootstrap -->
+      <link href=" {% static 'vendors/bootstrap/dist/css/bootstrap.min.css' %} " rel="stylesheet">
+
+        <!-- Font Awesome -->
+      <link href=" {% static 'vendors/font-awesome/css/font-awesome.min.css' %} " rel="stylesheet">
+
+        <!-- NProgress -->
+      <link href=" {% static 'vendors/nprogress/nprogress.css' %} " rel="stylesheet">
+
+        <!-- Animate.css -->
+      <link href=" {% static 'vendors/animate.css/animate.min.css' %} " rel="stylesheet">
+
+
+        <!-- Custom Theme Style -->
+      <link href=" {% static 'css/custom.min.css' %} " rel="stylesheet">
+
+    </head>
+
+    <body class="login">
+        <div>
+            <a class="hiddenanchor" id="signup"></a>
+            <a class="hiddenanchor" id="signin"></a>
+
+            <div class="login_wrapper">
+                <div class="animate form login_form">
+                    <section class="login_content">
+                        <h1><a class="site_title"> <span class="logo-f">MINSA<span class="logo-s">-SIS</span></span></a></h1>
+                        <form action="" method="post">
+                            <h1>Iniciar Sesion</h1>
+                            <input type="hidden" name="action" value="login">
+                            <div>
+                                <input type="text" class="form-control" placeholder="Usuario" required="" />
+                            </div>
+                            <div>
+                                <input type="password" class="form-control" placeholder="Contraseña" required="" />
+                            </div>
+                            <div class="text-left">
+                                <a class="btn btn-default submit" href="index.html">Iniciar</a>
+                                <a class="reset_pass" href="/index/">Olvido Contraseña?</a>
+                            </div>
+
+                            <div class="clearfix"></div>
+
+                            <div class="separator">
+
+
+                            </div>
+                        </form>
+
+                        <div>
+                            <p style="color: #999;">© 2017 Situacion Salud</p>
+                        </div>
+                    </section>
+                </div>
+
+
+            </div>
+        </div>
+    </body>
+
+<!-- Mirrored from 104.237.3.115/altena/src/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 22 Jun 2017 15:02:21 GMT -->
+</html>
