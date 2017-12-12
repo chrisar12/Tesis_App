@@ -3,7 +3,6 @@ from .models import *
 
 # Register your models here.
 
-
 admin.site.register(EstablecimientoSalud)
 admin.site.register(Zona)
 admin.site.register(NivelEconomico)

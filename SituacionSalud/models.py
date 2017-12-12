@@ -2,6 +2,14 @@ from django.db import models
 
 # Create your models here.
 
+
+class prueba(models.Model):
+    codigo = models.IntegerField(blank=True, null=True)
+    descripcion = models.CharField(max_length=210)
+
+    def __str__(self):
+        return self.codigo
+
 class EstablecimientoSalud(models.Model):
     codigo = models.IntegerField(blank=True, null=True)
     descripcion = models.CharField(max_length=210)
@@ -22,7 +30,7 @@ class Seguro(models.Model):
         return self.nombre
 
 class Cie(models.Model):
-    codigo = models.IntegerField(blank=True, null=True)
+    codigo = models.CharField(max_length=50)
     descripcion = models.CharField(max_length=210)
 
     def __str__(self):
