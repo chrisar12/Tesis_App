@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 from .models import Cie
+from .models import SituacionSalud
 from .forms import SituacionSaludForm
 
 
@@ -44,7 +45,7 @@ def ingresardatos(request):
 
 
 def solucionarspacios():
-    ob = Cie.objects.all()
+    ob = SituacionSalud.objects.all()
     for i in ob:
-        i.codigo = i.codigo.strip()
+        i.cie_id = i.cie_id.strip()
         i.save()

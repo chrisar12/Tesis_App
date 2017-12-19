@@ -35,3 +35,4 @@ class SituacionSaludForm(forms.ModelForm):
 #                                              'placeholder': 'Ingrese una descripcion'}),
 #         'delitos': forms.SelectMultiple(attrs={'class': 'form-control select2'}),
 #     }
+#  asi es como pones estilos, segun tu template entiendo esti
