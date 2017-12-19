@@ -44,8 +44,24 @@ def ingresardatos(request):
     return render(request, 'situacionsalud/ingresardatos.html', {'form': form})
 
 
+import csv
+import os
+from django.conf import settings
+
+path = os.path.join(settings.BASE_DIR, 'static/cie.csv')
+
+
 def solucionarspacios():
-    ob = SituacionSalud.objects.all()
-    for i in ob:
-        i.cie_id = i.cie_id.strip()
-        i.save()
+    try:
+        ob = Cie.objects.all()
+        url = path
+        with open(url) as csvarchivo:
+            entrada = csv.reader(csvarchivo)
+            for i in entrada:
+                cod, desc = i
+                cie = Cie(codigo=str(cod).strip().upper(),
+                          descripcion=str(desc).strip().upper())
+                cie.save()
+
+    except Exception:
+        print('error')
