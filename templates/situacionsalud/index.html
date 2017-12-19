@@ -48,10 +48,6 @@
                             </a>
                         </div>
 
-
-
-
-
                         <br />
 
                         <!-- sidebar menu -->
@@ -82,10 +78,8 @@
                                 </ul>
                             </div>
 
-
                         </div>
                         <!-- /sidebar menu -->
-
                         <!-- /menu footer buttons -->
                         <div class="sidebar-footer hidden-small">
 
@@ -112,23 +106,17 @@
                                     </a>
                                     <ul class="dropdown-menu dropdown-usermenu pull-right profile-dropdown">
                                         <li><a href="profile.html"><i class="fa fa-user" aria-hidden="true"></i>Perfil</a></li>
-
-
                                         <li class="top-menu-border-top"><a href="/"><i class="fa fa-sign-out"></i>Cerrar Sesion</a></li>
                                     </ul>
                                 </li>
-
-
-
-
-                            </ul>
+                         </ul>
                         </nav>
                     </div>
                 </div>
                 <!-- /top navigation -->
                 <!-- breadcrumb -->
                 <div class="breadcrumb_content">
-                    <div class="breadcrumb_text"><a href="#">{% block content %}{% endblock %}</a>
+                    <div class="breadcrumb_text"><a href="#">Aqui iba blque</a>
                     </div>
                 </div>
                 <!-- /breadcrumb -->
@@ -145,6 +133,7 @@
                     <div class="row">
                         <div class="col-md-12 col-sm-12 col-xs-12">
                             <div class="dashboard_graph border_box">
+                                {% block content %}{% endblock %}
 
 
 
