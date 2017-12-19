@@ -1,0 +1,55 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="{% static 'js/jquery-3.2.1.js' %}"></script>
+     <script type="text/javascript" src="{% static 'js/Chart.bundle.js' %}"></script>
+     <script type="text/javascript">
+         $(document).ready(function(){
+             var datos={
+                 labels:["A", "B" ,"C" ,"D"],
+                 dataset:[{
+                     label:"datos 1",
+                     backgroundColor:"rgba(220,220,220,0.5)",
+                     data:[2,5,7,8,9]
+                 },
+                 {
+                     label:"datos 2",
+                     backgroundColor:"rgba(150,100,58,0.5)",
+                     data:[12,25,27,38,19]
+                 }]
+             };
+             var canvas = document.getElementById('chart').getContext('2d');
+             window.bar = new Chart(canvas,{
+                 type:"bar",
+                 data:datos,
+                 options:{
+
+                     responsive:true,
+                     title:{
+                         display:true,
+                         text:"prueba de grafico barras"
+                     }
+
+                 }
+             });
+
+
+         });
+
+
+
+     </script>
+
+
+</head>
+<body>
+    <div id="canvas-contaniner" style="width: 50%">
+        <canvas id="chart" width="500" height="300"></canvas>
+
+    </div>
+
+</body>
+</html>

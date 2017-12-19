@@ -26,3 +26,9 @@ def index(request):
 
 def factorescondicionantes(request):
     return render(request, 'situacionsalud/factorescondicionantes.html/', {'variable': 'asdasdasdasds'})
+
+def reportes(request):
+    return render(request, 'situacionsalud/reportes.html/', {'variable': 'asdasdasdasds'})
+
+def report(request):
+    return render(request, 'situacionsalud/report.html/', {'variable': 'asdasdasdasds'})
