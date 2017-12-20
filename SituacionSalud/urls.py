@@ -8,7 +8,6 @@ urlpatterns = [
     url(r'^$', views.index, name="index"),
     url(r'^login/$', views.authentication, name="authentication"),
     url(r'^logout$', auth_views.logout, {'next_page': '/'}, name="logout", ),
-    url(r'^reportes/$', views.reportes, name='reportes'),
     url(r'^report/$', views.report, name='report'),
     url(r'^ingresar/$', views.ingresardatos, name='ingresar'),
 

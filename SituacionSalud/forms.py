@@ -20,7 +20,7 @@ class SituacionSaludForm(forms.ModelForm):
 
         widgets = {
             'edad': forms.NumberInput(),
-            'sexo': forms.Select(),
+            'sexo': forms.Select(attrs={'class': 'form-control select2'}),
             'distrito': forms.Select(),
             'cie': forms.Select(),
             'seguro': forms.Select(),
@@ -29,10 +29,9 @@ class SituacionSaludForm(forms.ModelForm):
             'eess': forms.Select()
         }
 
-#  Asi pones estilos o clases a los imputs
-#   widgets = {
-#         'descripcion': forms.Textarea(attrs={'class': 'form-control', 'rows': 3,
-#                                              'placeholder': 'Ingrese una descripcion'}),
-#         'delitos': forms.SelectMultiple(attrs={'class': 'form-control select2'}),
-#     }
-#  asi es como pones estilos, segun tu template entiendo esti
+
+#  widgets = {
+ #       'distrito': forms.Textarea(attrs={'class': 'form-control', 'rows': 3,
+  #                                            'placeholder': 'Ingrese una descripcion'}),
+   #      'edad': forms.SelectMultiple(attrs={'class': 'form-control select2'})
+    # }

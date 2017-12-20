@@ -74,7 +74,7 @@ def migrar_cie():
 
 def migrar_sexo():
     try:
-        ob = Sexo.objects.all()
+        ob = Sexo.objects.all().delete()
         sf = Sexo(nombre='Masculino', abreviacion='M')
         sf.save()
         sm = Sexo(nombre='Femenino', abreviacion='F')
@@ -138,7 +138,7 @@ def migrar_situacionsalud():
                 sex_o = Sexo.objects.filter(abreviacion=str(sex).strip().upper()).first()
 
                 situsal = SituacionSalud(eess=ees_o, cie=cie_o, distrito=distrit_o, sexo=sex_o, edad=edad_o)
-                print(situsal)
+                #print(situsal)
                 situsal.save()
 
     except Exception:

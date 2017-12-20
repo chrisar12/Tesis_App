@@ -87,3 +87,21 @@ class SituacionSalud(models.Model):
 
     def __str__(self):
         return str(self.edad.edad)
+
+
+# escribe los modelo
+
+class TipoGrupoEnf(models.Model):
+    denominacion = models.CharField(max_length=210, null=True, blank=True)
+
+    def __str__(self):
+        return self.denominacion
+
+
+class GrupoEnf(models.Model):
+    denominacion = models.CharField(max_length=210, null=True, blank=True)
+    tipogrupoenf = models.ForeignKey(TipoGrupoEnf, null=True, blank=True)
+    ciee = models.ManyToManyField(Cie, null=True, blank=True)
+
+    def __str__(self):
+        return self.denominacion
