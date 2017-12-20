@@ -33,6 +33,9 @@ class Cie(models.Model):
     def __str__(self):
         return self.codigo
 
+    class Meta:
+        ordering = ['codigo']
+
 
 class EstablecimientoSalud(models.Model):
     codigo = models.IntegerField(primary_key=True)
@@ -89,19 +92,21 @@ class SituacionSalud(models.Model):
         return str(self.edad.edad)
 
 
-# escribe los modelo
 
-class TipoGrupoEnf(models.Model):
+class TipoGrupoEnf2(models.Model):
     denominacion = models.CharField(max_length=210, null=True, blank=True)
 
     def __str__(self):
         return self.denominacion
 
 
-class GrupoEnf(models.Model):
+
+
+
+class Gruponenf2(models.Model):
     denominacion = models.CharField(max_length=210, null=True, blank=True)
-    tipogrupoenf = models.ForeignKey(TipoGrupoEnf, null=True, blank=True)
-    ciee = models.ManyToManyField(Cie, null=True, blank=True)
+    tipogrupoes = models.ForeignKey(TipoGrupoEnf2)
+    ciee = models.ManyToManyField(Cie)
 
     def __str__(self):
-        return self.denominacion
+        return self.denominacion +" - "+ str(self.tipogrupoes.denominacion)

@@ -11,3 +11,13 @@ admin.site.register(Cie)
 admin.site.register(Distrito)
 admin.site.register(Sexo)
 admin.site.register(SituacionSalud)
+admin.site.register(TipoGrupoEnf2)
+admin.site.register(Gruponenf2)
+
+#class CieAdmin(admin.ModelAdmin):
+ #   def get_queryset(self, request):
+  #      queryset = Cie.objects.all().order_by('codigo')
+   #     return queryset
+
+
+#admin.site.register(Cie, CieAdmin)
