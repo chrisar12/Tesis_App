@@ -110,3 +110,24 @@ class Gruponenf2(models.Model):
 
     def __str__(self):
         return self.denominacion +" - "+ str(self.tipogrupoes.denominacion)
+
+
+
+class RangoEdad(models.Model):
+    rango = models.CharField(max_length=210,null=True, blank=True)
+    cantidad = models.IntegerField(null=True, blank=True)
+
+    def __str__(self):
+        return self.rango
+
+class Poblacion(models.Model):
+    anio = models.IntegerField(null=True, blank=True)
+    pobtotal = models.IntegerField(null=True, blank=True)
+    pobmujer = models.IntegerField(null=True, blank=True)
+    pobvaron = models.IntegerField(null=True, blank=True)
+    nacimiento = models.IntegerField(null=True, blank=True)
+    muerte = models.IntegerField(null=True, blank=True)
+    rangoedad = models.ManyToManyField(RangoEdad)
+
+    def __str__(self):
+        return " - "

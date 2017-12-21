@@ -9,6 +9,9 @@ urlpatterns = [
     url(r'^login/$', views.authentication, name="authentication"),
     url(r'^logout$', auth_views.logout, {'next_page': '/'}, name="logout", ),
     url(r'^report/$', views.report, name='report'),
+    url(r'^reportnivelsalud/$', views.reportnivelsalud, name='reportnivelsalud'),
+    url(r'^reportfactorescondicionantes/$', views.reportfactorescondicionantes, name='reportfactorescondicionantes'),
+    url(r'^NSr1/$', views.NSr1, name='NSr1'),
     url(r'^ingresar/$', views.ingresardatos, name='ingresar'),
 
     # url(r'^$', views.login),

@@ -13,6 +13,9 @@ admin.site.register(Sexo)
 admin.site.register(SituacionSalud)
 admin.site.register(TipoGrupoEnf2)
 admin.site.register(Gruponenf2)
+admin.site.register(RangoEdad)
+admin.site.register(Poblacion)
+
 
 #class CieAdmin(admin.ModelAdmin):
  #   def get_queryset(self, request):
