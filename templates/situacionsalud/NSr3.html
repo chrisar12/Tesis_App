@@ -16,94 +16,100 @@
     <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
 
     <script type="text/javascript">
-        var jsonData = [{"count": 8856, "name": "Ocros"}, {"count": 4890, "name": "Quinua"}, {
-            "count": 18981,
-            "name": "San Juan Bautista"
-        }, {"count": 3535, "name": "San JosÃ© de Ticllas"}, {"count": 5079, "name": "Socos"}, {
-            "count": 12854,
-            "name": "Carmen Alto"
-        }, {"count": 4446, "name": "Acos Vinchos"}, {
-            "count": 11848,
-            "name": "AndrÃ©s Avelino CÃ¡ceres Dorregaray"
-        }, {"count": 5247, "name": "Chiara"}, {"count": 8451, "name": "JesÃºs Nazareno"}, {
-            "count": 4962,
-            "name": "Tambillo"
-        }, {"count": 2087, "name": "Santiago de Pischa"}, {"count": 14054, "name": "Vinchos"}, {
-            "count": 9560,
-            "name": "Acocro"
-        }, {"count": 52657, "name": "Ayacucho"}, {"count": 3637, "name": "Pacaycasa"}]
+        var jsonData = [{
+            "nombre": "Ayacucho",
+            "descripcion": "Calculo de las Vias Urinarias Inferiores",
+            "cantidad": 986
+        }, {
+            "nombre": "Acocro",
+            "descripcion": "Periodontitis Apical Aguda Originada en la Pulpa",
+            "cantidad": 477
+        }, {
+            "nombre": "Acos Vinchos",
+            "descripcion": "Displasia Cervical Leve / Neoplasia Intraepitelial Cervical Grado  1 (Nic1)",
+            "cantidad": 282
+        }, {
+            "nombre": "Carmen Alto",
+            "descripcion": "Absceso de Vaina Tendinosa",
+            "cantidad": 434
+        }, {
+            "nombre": "JesÃºs Nazareno",
+            "descripcion": "Fractura de la diafisis del Radio",
+            "cantidad": 196
+        }, {"nombre": "Ocros", "descripcion": "Bronconeumonia", "cantidad": 541}, {
+            "nombre": "Socos",
+            "descripcion": "Mordedura o Ataque de Perro - en Lugar",
+            "cantidad": 442
+        }, {
+            "nombre": "San Juan Bautista",
+            "descripcion": "Quistes Originados por el desarrollo de los dientes",
+            "cantidad": 522
+        }, {
+            "nombre": "Vinchos",
+            "descripcion": "Leucoplasia del Cuello del Utero",
+            "cantidad": 974
+        }, {
+            "nombre": "AndrÃ©s Avelino CÃ¡ceres Dorregaray",
+            "descripcion": "Trastornos Mentales y del Comportamiento debidos al uso de Alcohol .",
+            "cantidad": 408
+        }, {
+            "nombre": "Quinua",
+            "descripcion": "Discapacidad visual leve o inexistente - binocular",
+            "cantidad": 279
+        }, {
+            "nombre": "San JosÃ© de Ticllas",
+            "descripcion": "Helicobacter pylori [H. pylori] como causa de enfermedades clasificadas en otros capÂ¡tulos",
+            "cantidad": 360
+        }, {"nombre": "Tambillo", "descripcion": "Mareo y desvanecimiento", "cantidad": 331}, {
+            "nombre": "Chiara",
+            "descripcion": "Celulitis de Sitio",
+            "cantidad": 351
+        }, {
+            "nombre": "Pacaycasa",
+            "descripcion": "Tumor Benigno de la Mama",
+            "cantidad": 258
+        }, {"nombre": "Santiago de Pischa", "descripcion": "Mastoiditis", "cantidad": 164}];
         var categoryData = [];
         var seriesData = [];
         $.each(jsonData, function (i, item) {
-            seriesData.push(jsonData[i].count);
-            categoryData.push(jsonData[i].name);
-            console.log("seriesData" + JSON.stringify(seriesData));
+            seriesData.push(jsonData[i].cantidad);
+            categoryData.push(jsonData[i].descripcion);
+
         });
 
 
-        Highcharts.chart('container', {
-            chart: {
-                type: 'column'
-            },
-
-            title: {
-                text: 'Reporte Enfermedad más frecuente por distrito '
-            },
-            subtitle: {
-                text: 'Año 2017', // subtítulo
-
-            },
-            xAxis: {
-                categories: categoryData,
-                crosshair: true,
-
-            },
-            yAxis: {
-                min: 0,
+        $(document).ready(function () {
+            var options = {
+                chart: {
+                    renderTo: 'container',
+                    type: 'column'
+                },
                 title: {
-                    text: 'Cantidad Personas'
+                    text: 'Fruit Consumption'
                 },
-                stackLabels: {
-                    enabled: true,
-                    style: {
-                        fontWeight: 'bold',
-                        color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
-                    }
-                }
-
-            },
-            tooltip: {
-                headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
-                pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-                '<td style="padding:0"><b>{point.y}</b></td></tr>',
-                footerFormat: '</table>',
-                shared: true,
-                useHTML: true
-            },
-            plotOptions: {
-                series: {
-                    borderWidth: 0,
-                    dataLabels: {
-                        enabled: true,
-                        format: '{point.y}'
+                xAxis: {
+                    categories: categoryData
+                },
+                yAxis: {
+                    title: {
+                        text: 'Units'
                     }
                 },
-                column: {
-                    pointPadding: 0.2,
-                    borderWidth: 0
-                }
-            },
-            series: [],
+                series: []
+            };
 
-            credits: {
-                //quitando los creditos
-                enabled: false
-            }
+
+            $.each(jsonData, function (i, item) {
+
+                options.series[i]=jsonData[i].descripcion;
+                options.series[i]=jsonData[i].cantidad;
+                options.series.push(series)
+                chart=new Highcharts.Chart(options);
+            });
+
+
 
         });
-
-
-
 
 
     </script>

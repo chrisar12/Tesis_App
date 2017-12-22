@@ -6,7 +6,7 @@ from pip.cmdoptions import no_binary
 
 from .models import *
 from .models import SituacionSalud
-from .forms import SituacionSaludForm
+from .forms import *
 
 
 def authentication(request):
@@ -111,7 +111,18 @@ def NSf1(request):
 
 
 def FCf1(request):
-    return render(request, 'situacionsalud/FCf1.html', {})
+    form = FactoresCondicionantesForm()
+    try:
+        if request.method == 'POST':
+            form = FactoresCondicionantesForm(request.POST)
+            if form.is_valid():
+                poblacion = form.save(commit=False)
+                poblacion.save()
+               # form.save_m2m()
+    except Exception:
+        print('salior error')
+
+    return render(request, 'situacionsalud/FCf1.html', {'form': form})
 
 
 def reportes(request):

@@ -1,5 +1,5 @@
 from django import forms
-from .models import SituacionSalud
+from .models import *
 
 
 class SituacionSaludForm(forms.ModelForm):
@@ -31,3 +31,29 @@ class SituacionSaludForm(forms.ModelForm):
 #                                            'placeholder': 'Ingrese una descripcion'}),
 #      'edad': forms.SelectMultiple(attrs={'class': 'form-control select2'})
 # }
+
+
+class FactoresCondicionantesForm(forms.ModelForm):
+    class Meta:
+        model = Poblacion
+        # fields ='__all__'
+
+        fields = [
+            'anio',
+            'pobtotal',
+            'pobmujer',
+            'pobvaron',
+            'nacimiento',
+            'muerte',
+            'rangoedad'
+        ]
+
+        widgets = {
+            'anio': forms.IntegerField(required=False),
+            'pobtotal': forms.IntegerField(),
+            'pobmujer': forms.IntegerField(),
+            'pobvaron': forms.IntegerField(),
+            'nacimiento': forms.IntegerField(),
+            'muerte': forms.IntegerField()
+
+        }

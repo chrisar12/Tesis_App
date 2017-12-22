@@ -6,22 +6,30 @@
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
 
-        <label>Edad</label>
-        <input type="number" name="edad" class="form-control"/>
+        <label>Año</label>
+      {{ form.anio }}
         <br>
-        <label>Distrito</label>
+        <label>Poblacion Total</label>
 
-        {{ form.distrito }}
+        {{ form.pobtotal }}
         <br>
-        <label>Sexo</label>
-        {{ form.sexo }}
+        <label>Cantidad Mujeres</label>
+
+        {{ form.pobmujer }}
         <br>
-        <label>Cie</label>
-        {{ form.cie }}
+        <label>Cantidad Varones</label>
+
+        {{ form.pobvaron }}
         <br>
-        <label>Ess</label>
-        {{ form.eess }}
+        <label>Cantidad Nacimientos</label>
+
+        {{ form.nacimiento }}
         <br>
+        <label>Cantidad Muertes</label>
+
+        {{ form.muerte }}
+        <br>
+
         <div class="">
             <button type="submit" class="btn btn-primary">Registrar</button>
         </div>
