@@ -37,6 +37,20 @@ def reportnivelsalud(request):
     return render(request, 'situacionsalud/reportnivelsalud.html', {'variable': 'asdasdasdasds'})
 def NSr1(request):
     return render(request, 'situacionsalud/NSr1.html', {'variable': 'asdasdasdasds'})
+def NSr2(request):
+    return render(request, 'situacionsalud/NSr2.html', {'variable': 'asdasdasdasds'})
+def NSr3(request):
+    return render(request, 'situacionsalud/NSr3.html', {'variable': 'asdasdasdasds'})
+def NSr4(request):
+    return render(request, 'situacionsalud/NSr4.html', {'variable': 'asdasdasdasds'})
+def NSr5(request):
+    return render(request, 'situacionsalud/NSr5.html', {'variable': 'asdasdasdasds'})
+def NSr6(request):
+    return render(request, 'situacionsalud/NSr6.html', {'variable': 'asdasdasdasds'})
+def NSr7(request):
+    return render(request, 'situacionsalud/NSr7.html', {'variable': 'asdasdasdasds'})
+def NSr8(request):
+    return render(request, 'situacionsalud/NSr8.html', {'variable': 'asdasdasdasds'})
 
 def reportfactorescondicionantes(request):
     return render(request, 'situacionsalud/reportfactorescondicionantes.html', {'variable': 'asdasdasdasds'})
