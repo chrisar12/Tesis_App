@@ -3,5 +3,28 @@
 {% load staticfiles %}
 
 {% block content %}
-    <a>grgergergregrege</a>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <label>Edad</label>
+        <input type="number" name="edad" class="form-control"/>
+        <br>
+        <label>Distrito</label>
+
+        {{ form.distrito }}
+        <br>
+        <label>Sexo</label>
+        {{ form.sexo }}
+        <br>
+        <label>Cie</label>
+        {{ form.cie }}
+        <br>
+        <label>Ess</label>
+        {{ form.eess }}
+        <br>
+        <div class="">
+            <button type="submit" class="btn btn-primary">Registrar</button>
+        </div>
+    </form>
 {% endblock %}
+

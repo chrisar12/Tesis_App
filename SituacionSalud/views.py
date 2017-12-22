@@ -35,37 +35,85 @@ def factorescondicionantes(request):
 
 def reportnivelsalud(request):
     return render(request, 'situacionsalud/reportnivelsalud.html', {'variable': 'asdasdasdasds'})
+
+
 def NSr1(request):
     return render(request, 'situacionsalud/NSr1.html', {'variable': 'asdasdasdasds'})
+
+
 def NSr2(request):
     return render(request, 'situacionsalud/NSr2.html', {'variable': 'asdasdasdasds'})
+
+
 def NSr3(request):
     return render(request, 'situacionsalud/NSr3.html', {'variable': 'asdasdasdasds'})
+
+
 def NSr4(request):
     return render(request, 'situacionsalud/NSr4.html', {'variable': 'asdasdasdasds'})
+
+
 def NSr5(request):
     return render(request, 'situacionsalud/NSr5.html', {'variable': 'asdasdasdasds'})
+
+
 def NSr6(request):
     return render(request, 'situacionsalud/NSr6.html', {'variable': 'asdasdasdasds'})
+
+
 def NSr7(request):
     return render(request, 'situacionsalud/NSr7.html', {'variable': 'asdasdasdasds'})
+
+
 def NSr8(request):
     return render(request, 'situacionsalud/NSr8.html', {'variable': 'asdasdasdasds'})
 
+
 def reportfactorescondicionantes(request):
     return render(request, 'situacionsalud/reportfactorescondicionantes.html', {'variable': 'asdasdasdasds'})
+
+
 def FCr1(request):
     return render(request, 'situacionsalud/FCr1.html', {'variable': 'asdasdasdasds'})
+
+
 def FCr2(request):
     return render(request, 'situacionsalud/FCr2.html', {'variable': 'asdasdasdasds'})
+
+
 def FCr3(request):
     return render(request, 'situacionsalud/FCr3.html', {'variable': 'asdasdasdasds'})
 
 
 def NSf1(request):
-    return render(request, 'situacionsalud/NSf1.html', {'variable': 'asdasdasdasds'})
+    form = SituacionSaludForm()
+    try:
+        if request.method == 'POST':
+            form = SituacionSaludForm(request.POST)
+            if form.is_valid():
+                situasionsalud = form.save(commit=False)
+                edd = request.POST.get('edad')
+                if 0 <= int(edd) <= 29:
+                    edad_o = Edad(edad=int(edd), tipo='D', nomenclaturar='Dias')
+                if 51 <= int(edd) <= 61:
+                    edad_o = Edad(edad=int(edd), tipo='M', nomenclaturar='Meses')
+                if 100 <= int(edd):
+                    edad_o = Edad(edad=int(int(edd) - 100), tipo='A', nomenclaturar='Años')
+
+                edad_o.save()
+                situasionsalud.edad = edad_o
+                situasionsalud.save()
+                form.save_m2m()
+    except Exception:
+        print('salior error')
+
+    return render(request, 'situacionsalud/FCf1.html', {'form': form})
+
+
 def FCf1(request):
-    return render(request, 'situacionsalud/FCf1.html', {'variable': 'asdasdasdasds'})
+    return render(request, 'situacionsalud/FCf1.html', {})
+
+
 def reportes(request):
     return render(request, 'situacionsalud/reportes.html', {'variable': 'asdasdasdasds'})
 
@@ -171,7 +219,7 @@ def migrar_situacionsalud():
                 sex_o = Sexo.objects.filter(abreviacion=str(sex).strip().upper()).first()
 
                 situsal = SituacionSalud(eess=ees_o, cie=cie_o, distrito=distrit_o, sexo=sex_o, edad=edad_o)
-                #print(situsal)
+                # print(situsal)
                 situsal.save()
 
     except Exception:

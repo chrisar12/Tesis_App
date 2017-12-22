@@ -42,7 +42,7 @@ class EstablecimientoSalud(models.Model):
     descripcion = models.CharField(max_length=210)
 
     def __str__(self):
-        return self.codigo
+        return str(self.descripcion)
 
 
 class Sexo(models.Model):
@@ -73,7 +73,7 @@ class Edad(models.Model):
     nomenclaturar = models.CharField(max_length=15)
 
     def __str__(self):
-        return str(self.edad.edad)
+        return str(self.edad)
 
 
 class SituacionSalud(models.Model):
@@ -92,15 +92,11 @@ class SituacionSalud(models.Model):
         return str(self.edad.edad)
 
 
-
 class TipoGrupoEnf2(models.Model):
     denominacion = models.CharField(max_length=210, null=True, blank=True)
 
     def __str__(self):
         return self.denominacion
-
-
-
 
 
 class Gruponenf2(models.Model):
@@ -109,16 +105,16 @@ class Gruponenf2(models.Model):
     ciee = models.ManyToManyField(Cie)
 
     def __str__(self):
-        return self.denominacion +" - "+ str(self.tipogrupoes.denominacion)
-
+        return self.denominacion + " - " + str(self.tipogrupoes.denominacion)
 
 
 class RangoEdad(models.Model):
-    rango = models.CharField(max_length=210,null=True, blank=True)
+    rango = models.CharField(max_length=210, null=True, blank=True)
     cantidad = models.IntegerField(null=True, blank=True)
 
     def __str__(self):
         return self.rango
+
 
 class Poblacion(models.Model):
     anio = models.IntegerField(null=True, blank=True)
