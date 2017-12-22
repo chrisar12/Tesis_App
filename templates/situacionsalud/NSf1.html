@@ -1,0 +1,29 @@
+{% extends 'situacionsalud/index.html' %}
+
+{% load staticfiles %}
+
+{% block content %}
+
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <label>Edad</label>
+       {{ form.edad }}
+        <br>
+        <label>Distrito</label>
+
+        <select>   {{ form.distrito }}</select>
+        <br>
+        <label>Sexo</label>
+        {{ form.sexo }}
+        <br>
+        <label>Nivel Economico</label>
+        {{ form.niveleconomico }}
+
+
+        <div class="">
+            <button type="submit" class="btn btn-primary">Registrar</button>
+        </div>
+    </form>
+
+{% endblock %}

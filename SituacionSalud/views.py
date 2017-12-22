@@ -54,8 +54,18 @@ def NSr8(request):
 
 def reportfactorescondicionantes(request):
     return render(request, 'situacionsalud/reportfactorescondicionantes.html', {'variable': 'asdasdasdasds'})
+def FCr1(request):
+    return render(request, 'situacionsalud/FCr1.html', {'variable': 'asdasdasdasds'})
+def FCr2(request):
+    return render(request, 'situacionsalud/FCr2.html', {'variable': 'asdasdasdasds'})
+def FCr3(request):
+    return render(request, 'situacionsalud/FCr3.html', {'variable': 'asdasdasdasds'})
 
 
+def NSf1(request):
+    return render(request, 'situacionsalud/NSf1.html', {'variable': 'asdasdasdasds'})
+def FCf1(request):
+    return render(request, 'situacionsalud/FCf1.html', {'variable': 'asdasdasdasds'})
 def reportes(request):
     return render(request, 'situacionsalud/reportes.html', {'variable': 'asdasdasdasds'})
 

@@ -19,6 +19,11 @@ urlpatterns = [
     url(r'^NSr6/$', views.NSr6, name='NSr6'),
     url(r'^NSr7/$', views.NSr7, name='NSr7'),
     url(r'^NSr8/$', views.NSr8, name='NSr8'),
+    url(r'^FCr1/$', views.FCr1, name='FCr1'),
+    url(r'^FCr2/$', views.FCr2, name='FCr2'),
+    url(r'^FCr3/$', views.FCr3, name='FCr3'),
+    url(r'^NSf1/$', views.NSf1, name='NSf1'),
+    url(r'^FCf1/$', views.FCf1, name='FCf1'),
     url(r'^ingresar/$', views.ingresardatos, name='ingresar'),
 
     # url(r'^$', views.login),

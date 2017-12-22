@@ -19,7 +19,7 @@ class SituacionSaludForm(forms.ModelForm):
         ]
 
         widgets = {
-            'edad': forms.NumberInput(),
+            'edad': forms.NumberInput(attrs={'class':'form-control'}),
             'sexo': forms.Select(attrs={'class': 'form-control select2'}),
             'distrito': forms.Select(),
             'cie': forms.Select(),
