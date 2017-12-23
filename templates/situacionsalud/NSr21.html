@@ -16,33 +16,18 @@
     <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
 
     <script type="text/javascript">
-        var jsonData = [{
-            "name": "ENFERMEDADES ENDOCRINAS, METABÓLICAS Y NUTRICIONALES",
-            "count": 383
-        }, {
-            "name": "ENFERMEDADES NEUROPSIQUIÁTRICAS Y DE LOS ÓRGANOS DE LOS SENTIDOS",
-            "count": 838
-        }, {
-            "name": "ENFERMEDADES DIGESTIVAS",
-            "count": 16757
-        }, {
-            "name": "ENFERMEDADES CARDIOVASCULARES Y RESPIRATORIAS",
-            "count": 5183
-        }, {
-            "name": "COMPLICACIONES DEL EMBARAZO, PARTO Y PUERPERIO",
-            "count": 304
-        }, {"name": "ENFERMEDADES NEOPLÁSICAS", "count": 206}, {
-            "name": "ENFERMEDADES GENITOURINARIAS",
-            "count": 4701
-        }, {
-            "name": "ENFERMEDADES DE LA PIEL Y DEL SISTEMA OSTEOMUSCULAR Y TEJIDO CONJUNTIVO",
-            "count": 3163
-        }, {"name": "ENFERMEDADES INFECCIOSAS Y PARASITARIAS", "count": 20294}]
+        var jsonData = [{"count": 52657, "nombre": "Ayacucho"}, {
+            "count": 18981,
+            "nombre": "San Juan Bautista"
+        }, {"count": 14054, "nombre": "Vinchos"}, {"count": 12854, "nombre": "Carmen Alto"}, {
+            "count": 11848,
+            "nombre": "AndrÃ©s Avelino CÃ¡ceres Dorregaray"
+        }]
         var categoryData = [];
         var seriesData = [];
         $.each(jsonData, function (i, item) {
             seriesData.push(jsonData[i].count);
-            categoryData.push(jsonData[i].name);
+            categoryData.push(jsonData[i].nombre);
             console.log("seriesData" + JSON.stringify(seriesData));
         });
 
@@ -51,14 +36,14 @@
                 type: 'column'
             },
             title: {
-                text: 'Cantidad de Enfermedades por Grupo Enfermedad'
+                text: 'Reporte Cantidad de Enfermedades reportados por distrito'
             },
             subtitle: {
                 text: 'Año 2017', // subtítulo
 
             },
             xAxis: {
-
+                categories: categoryData,
                 crosshair: true,
 
             },
@@ -97,24 +82,14 @@
                     borderWidth: 0
                 }
             },
-            series: [{name: 'ENFERMEDADES ENDOCRINAS, METABÓLICAS Y NUTRICIONALES', data: [383]},
-                {name: 'ENFERMEDADES NEUROPSIQUIÁTRICAS Y DE LOS ÓRGANOS DE LOS SENTIDOS', data: [838]},
-                {name: 'ENFERMEDADES DIGESTIVAS', data: [16757]},
-                {name: 'ENFERMEDADES CARDIOVASCULARES Y RESPIRATORIAS', data: [5183]},
-                {name: 'COMPLICACIONES DEL EMBARAZO, PARTO Y PUERPERIO', data: [304]},
-                {name: 'ENFERMEDADES NEOPLÁSICA', data: [206]},
-                {name: 'ENFERMEDADES GENITOURINARIAS', data: [4701]},
-                {name: 'ENFERMEDADES DE LA PIEL Y DEL SISTEMA OSTEOMUSCULAR Y TEJIDO CONJUNTIVO', data: [3163]},
-                {name: 'ENFERMEDADES INFECCIOSAS Y PARASITARIAS', data: [20294]},
-
-            ],
+            series: [{
+                name: 'Distritos',
+                data: seriesData
+            }],
             credits: {
                 //quitando los creditos
                 enabled: false
             }
-
-
-
 
         });
 

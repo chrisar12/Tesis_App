@@ -21,93 +21,82 @@
             "descripcion": "Calculo de las Vias Urinarias Inferiores",
             "cantidad": 986
         }, {
-            "nombre": "Acocro",
-            "descripcion": "Periodontitis Apical Aguda Originada en la Pulpa",
-            "cantidad": 477
-        }, {
-            "nombre": "Acos Vinchos",
-            "descripcion": "Displasia Cervical Leve / Neoplasia Intraepitelial Cervical Grado  1 (Nic1)",
-            "cantidad": 282
-        }, {
-            "nombre": "Carmen Alto",
-            "descripcion": "Absceso de Vaina Tendinosa",
-            "cantidad": 434
-        }, {
-            "nombre": "JesÃºs Nazareno",
-            "descripcion": "Fractura de la diafisis del Radio",
-            "cantidad": 196
-        }, {"nombre": "Ocros", "descripcion": "Bronconeumonia", "cantidad": 541}, {
-            "nombre": "Socos",
-            "descripcion": "Mordedura o Ataque de Perro - en Lugar",
-            "cantidad": 442
-        }, {
-            "nombre": "San Juan Bautista",
-            "descripcion": "Quistes Originados por el desarrollo de los dientes",
-            "cantidad": 522
-        }, {
             "nombre": "Vinchos",
             "descripcion": "Leucoplasia del Cuello del Utero",
             "cantidad": 974
-        }, {
-            "nombre": "AndrÃ©s Avelino CÃ¡ceres Dorregaray",
-            "descripcion": "Trastornos Mentales y del Comportamiento debidos al uso de Alcohol .",
-            "cantidad": 408
-        }, {
-            "nombre": "Quinua",
-            "descripcion": "Discapacidad visual leve o inexistente - binocular",
-            "cantidad": 279
-        }, {
-            "nombre": "San JosÃ© de Ticllas",
-            "descripcion": "Helicobacter pylori [H. pylori] como causa de enfermedades clasificadas en otros capÂ¡tulos",
-            "cantidad": 360
-        }, {"nombre": "Tambillo", "descripcion": "Mareo y desvanecimiento", "cantidad": 331}, {
-            "nombre": "Chiara",
-            "descripcion": "Celulitis de Sitio",
-            "cantidad": 351
-        }, {
-            "nombre": "Pacaycasa",
-            "descripcion": "Tumor Benigno de la Mama",
-            "cantidad": 258
-        }, {"nombre": "Santiago de Pischa", "descripcion": "Mastoiditis", "cantidad": 164}];
+        }, {"nombre": "Ocros", "descripcion": "Bronconeumonia", "cantidad": 541}, {
+            "nombre": "San Juan Bautista",
+            "descripcion": "Quistes Originados por el desarrollo de los dientes",
+            "cantidad": 522
+        }, {"nombre": "Acocro", "descripcion": "Periodontitis Apical Aguda Originada en la Pulpa", "cantidad": 477}]
         var categoryData = [];
         var seriesData = [];
+        var provenf = [];
         $.each(jsonData, function (i, item) {
+            provenf.push(jsonData[i].nombre+' '+jsonData[i].descripcion);
             seriesData.push(jsonData[i].cantidad);
             categoryData.push(jsonData[i].descripcion);
 
         });
 
 
-        $(document).ready(function () {
-            var options = {
-                chart: {
-                    renderTo: 'container',
-                    type: 'column'
-                },
+        Highcharts.chart('container', {
+            chart: {
+                type: 'column'
+            },
+            title: {
+                text: 'Reporte Enfermedad mas frecuente por distrito'
+            },
+            subtitle: {
+                text: 'Año 2017', // subtítulo
+
+            },
+            xAxis: {
+                categories: provenf,
+                crosshair: true,
+
+            },
+            yAxis: {
+                min: 0,
                 title: {
-                    text: 'Fruit Consumption'
+                    text: 'Cantidad Personas'
                 },
-                xAxis: {
-                    categories: categoryData
-                },
-                yAxis: {
-                    title: {
-                        text: 'Units'
+                stackLabels: {
+                    enabled: true,
+                    style: {
+                        fontWeight: 'bold',
+                        color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
+                    }
+                }
+
+            },
+            tooltip: {
+                headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name[0]}: </td>' +
+                '<td style="padding:0"><b>{point.y}</b></td></tr>',
+                footerFormat: '</table>',
+                shared: true,
+                useHTML: true
+            },
+            plotOptions: {
+                series: {
+                    borderWidth: 0,
+                    dataLabels: {
+                        enabled: true,
+                        format: '{point.y}'
                     }
                 },
-                series: []
-            };
-
-
-            $.each(jsonData, function (i, item) {
-
-                options.series[i]=jsonData[i].descripcion;
-                options.series[i]=jsonData[i].cantidad;
-                options.series.push(series)
-                chart=new Highcharts.Chart(options);
-            });
-
-
+                column: {
+                    pointPadding: 0.2,
+                    borderWidth: 0
+                }
+            },
+            series: [{name: 'Provincia Enfermedad', data: seriesData}
+            ],
+            credits: {
+                //quitando los creditos
+                enabled: false
+            }
 
         });
 

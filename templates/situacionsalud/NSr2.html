@@ -16,27 +16,18 @@
     <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
 
     <script type="text/javascript">
-        var jsonData = [{"count": 8856, "name": "Ocros"}, {"count": 4890, "name": "Quinua"}, {
+        var jsonData = [{"count": 52657, "nombre": "Ayacucho"}, {
             "count": 18981,
-            "name": "San Juan Bautista"
-        }, {"count": 3535, "name": "San JosÃ© de Ticllas"}, {"count": 5079, "name": "Socos"}, {
-            "count": 12854,
-            "name": "Carmen Alto"
-        }, {"count": 4446, "name": "Acos Vinchos"}, {
+            "nombre": "San Juan Bautista"
+        }, {"count": 14054, "nombre": "Vinchos"}, {"count": 12854, "nombre": "Carmen Alto"}, {
             "count": 11848,
-            "name": "AndrÃ©s Avelino CÃ¡ceres Dorregaray"
-        }, {"count": 5247, "name": "Chiara"}, {"count": 8451, "name": "JesÃºs Nazareno"}, {
-            "count": 4962,
-            "name": "Tambillo"
-        }, {"count": 2087, "name": "Santiago de Pischa"}, {"count": 14054, "name": "Vinchos"}, {
-            "count": 9560,
-            "name": "Acocro"
-        }, {"count": 52657, "name": "Ayacucho"}, {"count": 3637, "name": "Pacaycasa"}]
+            "nombre": "AndrÃ©s Avelino CÃ¡ceres Dorregaray"
+        }]
         var categoryData = [];
         var seriesData = [];
         $.each(jsonData, function (i, item) {
             seriesData.push(jsonData[i].count);
-            categoryData.push(jsonData[i].name);
+            categoryData.push(jsonData[i].nombre);
             console.log("seriesData" + JSON.stringify(seriesData));
         });
 
@@ -52,7 +43,7 @@
 
             },
             xAxis: {
-                categories: categoryData,
+
                 crosshair: true,
 
             },
@@ -91,10 +82,12 @@
                     borderWidth: 0
                 }
             },
-            series: [{
-                name: 'Enfermedades',
-                data: seriesData
-            }],
+            series: [{name: 'Ayacucho',data: [52657]},
+                {name: 'San Juan Bautista',data: [18981]},
+                {name: 'Vinchos',data: [14054]},
+                {name: 'Carmen Alto',data: [12854]},
+                {name: 'Andres Avelino Caceres Dorregaray',data: [11848]}
+                ],
             credits: {
                 //quitando los creditos
                 enabled: false

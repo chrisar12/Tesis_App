@@ -16,18 +16,9 @@
     <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
 
     <script type="text/javascript">
-        var jsonData = [{"count": 6614, "name": "Rinofaringitis Aguda - Rinitis Aguda"}, {
-            "count": 4965,
-            "name": "Faringitis Aguda"
-        }, {"count": 4257, "name": "Faringo Amigdalitis Aguda"}, {
-            "count": 4122,
-            "name": "Infeccion de Vias Urinarias - Sitio"
-        }, {"count": 3875, "name": "Amigdalitis Aguda"}, {"count": 3580, "name": "Lumbago"}, {
-            "count": 3577,
-            "name": "Gastritis"
-        }, {"count": 3434, "name": "Caries de la dentina"}, {"count": 3001, "name": "Sobrepeso"}, {
-            "count": 2924,
-            "name": "Bronquitis - no Especificada como Aguda o Cronica"
+        var jsonData = [{"count": 7572, "name": "Meses"}, {"count": 162689, "name": "Años"}, {
+            "count": 883,
+            "name": "Dias"
         }]
         var categoryData = [];
         var seriesData = [];
@@ -42,14 +33,14 @@
                 type: 'column'
             },
             title: {
-                text: 'Reporte Enfermedades más frecuentes'
+                text: 'Cantidad Enfermedades reportados por grupo etareo'
             },
             subtitle: {
                 text: 'Año 2017', // subtítulo
 
             },
             xAxis: {
-                categories: categoryData,
+
                 crosshair: true,
 
             },
@@ -88,14 +79,17 @@
                     borderWidth: 0
                 }
             },
-            series: [{
-                name: 'Enfermedades',
-                data: seriesData
-            }],
+            series: [
+                {name: '1 a 12 Meses', data: [7572]},
+                {name: '1 a 100 Años', data: [162689]},
+                {name: '1 a 29 Dias', data: [883]},
+            ],
             credits: {
                 //quitando los creditos
                 enabled: false
             }
+
+
 
         });
 
